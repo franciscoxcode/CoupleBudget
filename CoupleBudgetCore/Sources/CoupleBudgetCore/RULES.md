@@ -67,9 +67,21 @@ Rules:
   - Always affects an Account.
   - MUST belong to a Bucket.
 - Income:
-  - Always affects an Account.
-  - Does NOT belong to a Bucket.
-  - Contributes to Unassigned only if the Account is planifiable.
+    - Income represents money entering an Account.
+    - Income always increases the balance of the destination Account.
+    - If the destination Account is planifiable, the amount increases the planifiable total.
+    
+    Assignment rules:
+    - Income MAY be assigned to a Bucket at creation time.
+    - If Income is assigned to a Bucket:
+        - the amount is allocated directly to that Bucket
+        - it never becomes Unassigned
+    - If Income is NOT assigned to a Bucket:
+        - the amount increases Unassigned
+
+    Note:
+    - Assigned Income increases planifiable balances and bucket allocations by the same amount, so Unassigned remains unchanged.
+
 - Transfer:
   - Moves money between two entities (Account ↔ Account, Account ↔ Person).
   - Does NOT affect Buckets.
