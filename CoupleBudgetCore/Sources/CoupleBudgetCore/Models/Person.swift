@@ -9,12 +9,10 @@ import Foundation
 public struct Person {
     public let id: UUID
     public var name: String
-    public var isPlanifiable: Bool
 
-    public init(id: UUID = UUID(), name: String, isPlanifiable: Bool) {
+    public init(id: UUID = UUID(), name: String) {
         self.id = id
         self.name = name
-        self.isPlanifiable = isPlanifiable
     }
 }
 
