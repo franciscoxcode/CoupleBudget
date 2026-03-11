@@ -29,6 +29,7 @@
 		EA4F1C222F2AD3A0000EC8CC /* CoupleBudgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoupleBudgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4F1C352F2ADE5F000EC8CC /* CoupleBudgetCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoupleBudgetCore; sourceTree = "<group>"; };
 		EA5721CD2F61E6BF0097CAB4 /* CoupleBudgetCoreTests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CoupleBudgetCoreTests; path = CoupleBudgetCore/Tests/CoupleBudgetCoreTests; sourceTree = "<group>"; };
+		EA5721E62F620DE60097CAB4 /* RULES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RULES.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -83,6 +84,7 @@
 				EA4F1C1B2F2AD3A0000EC8CC /* CoupleBudgetTests */,
 				EA4F1C252F2AD3A0000EC8CC /* CoupleBudgetUITests */,
 				EA4F1C0C2F2AD39F000EC8CC /* Products */,
+				EA5721E62F620DE60097CAB4 /* RULES.md */,
 			);
 			sourceTree = "<group>";
 		};
