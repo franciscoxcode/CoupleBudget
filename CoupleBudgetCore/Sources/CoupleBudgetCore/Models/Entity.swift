@@ -11,5 +11,11 @@ public struct Entity {
     public let id: UUID
     public let name: String
     public let kind: EntityKind
+    
+    public init(id: UUID = UUID(), name: String, kind: EntityKind) {
+        self.id = id
+        self.name = name
+        self.kind = kind
+    }
 }
 
