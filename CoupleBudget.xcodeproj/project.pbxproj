@@ -28,6 +28,7 @@
 		EA4F1C182F2AD3A0000EC8CC /* CoupleBudgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoupleBudgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4F1C222F2AD3A0000EC8CC /* CoupleBudgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoupleBudgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4F1C352F2ADE5F000EC8CC /* CoupleBudgetCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoupleBudgetCore; sourceTree = "<group>"; };
+		EA5721CD2F61E6BF0097CAB4 /* CoupleBudgetCoreTests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CoupleBudgetCoreTests; path = CoupleBudgetCore/Tests/CoupleBudgetCoreTests; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -76,6 +77,7 @@
 		EA4F1C022F2AD39F000EC8CC = {
 			isa = PBXGroup;
 			children = (
+				EA5721CD2F61E6BF0097CAB4 /* CoupleBudgetCoreTests */,
 				EA4F1C352F2ADE5F000EC8CC /* CoupleBudgetCore */,
 				EA4F1C0D2F2AD39F000EC8CC /* CoupleBudget */,
 				EA4F1C1B2F2AD3A0000EC8CC /* CoupleBudgetTests */,
