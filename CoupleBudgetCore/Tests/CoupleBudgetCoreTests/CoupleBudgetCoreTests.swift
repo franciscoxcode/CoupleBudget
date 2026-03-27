@@ -98,3 +98,87 @@ import Foundation
     )
     #expect(validate(movement).contains(.missingAmount))
 }
+
+// MARK: - BalanceCalculator tests
+
+@Test func balance_income_adds_to_account() {
+    let bank = Account(name: "Bank", isPlanifiable: true)
+    let bankEntity = Entity(id: bank.id, name: bank.name, kind: .account)
+    
+    let movement = MoneyMovement(
+        amount: 100,
+        type: .income,
+        to: bankEntity
+    )
+    
+    let result = BalanceCalculator.balance(for: bank, in: [movement])
+    #expect(result == 100)
+}
+
+@Test func balance_expense_subtracts_from_account() {
+    let bank = Account(name: "Bank", isPlanifiable: true)
+    let bankEntity = Entity(id: bank.id, name: bank.name, kind: .account)
+    
+    let movement = MoneyMovement(
+        amount: 50,
+        type: .expense,
+        from: bankEntity,
+        bucketID: UUID()
+    )
+    
+    let result = BalanceCalculator.balance(for: bank, in: [movement])
+    #expect(result == -50)
+}
+
+@Test func balance_transfer_moves_between_accounts() {
+    let checking = Account(name: "Checking", isPlanifiable: true)
+    let savings = Account(name: "Savings", isPlanifiable: true)
+    let checkingEntity = Entity(id: checking.id, name: checking.name, kind: .account)
+    let savingsEntity = Entity(id: savings.id, name: savings.name, kind: .account)
+    
+    let movement = MoneyMovement(
+        amount: 200,
+        type: .transfer,
+        from: checkingEntity,
+        to: savingsEntity
+    )
+    
+    #expect(BalanceCalculator.balance(for: checking, in: [movement]) == -200)
+    #expect(BalanceCalculator.balance(for: savings, in: [movement]) == 200)
+}
+
+@Test func total_planifiable_excludes_non_planifiable() {
+    let bank = Account(name: "Bank", isPlanifiable: true)
+    let retirement = Account(name: "Retirement", isPlanifiable: false)
+    let bankEntity = Entity(id: bank.id, name: bank.name, kind: .account)
+    let retirementEntity = Entity(id: retirement.id, name: retirement.name, kind: .account)
+    
+    let movements = [
+        MoneyMovement(amount: 1000, type: .income, to: bankEntity),
+        MoneyMovement(amount: 5000, type: .income, to: retirementEntity)
+    ]
+    
+    let result = BalanceCalculator.totalPlanifiable(
+        accounts: [bank, retirement],
+        movements: movements
+    )
+    #expect(result == 1000)
+}
+
+@Test func total_net_includes_all_accounts() {
+    let bank = Account(name: "Bank", isPlanifiable: true)
+    let retirement = Account(name: "Retirement", isPlanifiable: false)
+    let bankEntity = Entity(id: bank.id, name: bank.name, kind: .account)
+    let retirementEntity = Entity(id: retirement.id, name: retirement.name, kind: .account)
+    
+    let movements = [
+        MoneyMovement(amount: 1000, type: .income, to: bankEntity),
+        MoneyMovement(amount: 5000, type: .income, to: retirementEntity)
+    ]
+    
+    let result = BalanceCalculator.totalNet(
+        accounts: [bank, retirement],
+        movements: movements
+    )
+    #expect(result == 6000)
+}
