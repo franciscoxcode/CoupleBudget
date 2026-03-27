@@ -1,10 +1,10 @@
 # CoupleBudget
 
 ![Status](https://badgen.net/badge/status/in%20progress/yellow)
-![Swift](https://badgen.net/badge/Swift/6.3/orange)
+![Swift](https://badgen.net/badge/Swift/6.3/pink)
 ![UI](https://badgen.net/badge/UI/SwiftUI/blue)
 ![Architecture](https://badgen.net/badge/Architecture/MVVM/purple)
-![Platform](https://badgen.net/badge/Platform/iOS/black)
+![Platform](https://badgen.net/badge/Platform/iOS/orange)
 
 CoupleBudget simplifies shared money management by clearly separating three concepts that most finance apps mix together:
 
@@ -113,4 +113,6 @@ open CoupleBudget/CoupleBudget.xcodeproj
 ---
 
 ## License
-Copyright (c) 2026 Francisco Jean. All rights reserved.
+Copyright (c) 2026 Francisco Javier Casillas Pérez. All rights reserved.
+This project is proprietary and confidential. See [LICENSE](LICENSE) for details.
+
